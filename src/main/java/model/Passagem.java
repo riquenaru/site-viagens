@@ -3,7 +3,7 @@ package model;
 
 public class Passagem {
 
-
+	// Atributos
 	private int idPassagem;
 	private double preco_passagem;
 
@@ -23,7 +23,8 @@ public class Passagem {
 		this.destino = destino;
 		
 	}
-
+	
+	// Getters and setters
 	public int getIdPassagem() {
 		return idPassagem;
 	}

@@ -135,7 +135,7 @@ public class CarrinhoDAO {
 
 	public void update(Carrinho carrinho) {
 		String sql = "INSERT INTO carrinho (qtd_itens, total_compra,"
-				+ " data_compra, passagem, id_passagem, cpf_cnpj) values(?,?,?,?,?,?)";
+				+ " data_compra, passagem, id_passagem, cpf_cnpj, id_carrinho) values(?,?,?,?,?,??)";
 
 		try {
 			conn = ConnectionMySQL.createConnectionMySQL();
@@ -152,6 +152,8 @@ public class CarrinhoDAO {
             pstm.setInt(4, carrinho.getPassagens().getIdPassagem());
 
 			pstm.setString(5, carrinho.getUsuario().getCpf_cnpj());
+			
+			pstm.setInt(6, carrinho.getIdCarrinho());
 
 			pstm.execute();
 

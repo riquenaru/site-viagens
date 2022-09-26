@@ -26,6 +26,7 @@ public class Usuario {
 		this.login = login;
 	}
 
+	// Getters and setters
 	public int getIdUsuario() {
 		return idUsuario;
 	}

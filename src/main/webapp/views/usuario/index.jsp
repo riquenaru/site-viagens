@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
 <%
 @SuppressWarnings("unchecked")
-List<Carrinho> lista = (List<Carrinho>) request.getAttribute("Carrinho");
+List<Usuario> lista = (List<Usuario>) request.getAttribute("Usuario");
 %>
 
 
@@ -14,7 +14,7 @@ List<Carrinho> lista = (List<Carrinho>) request.getAttribute("Carrinho");
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrinho</title>
+<title>Usuario</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"

@@ -49,10 +49,10 @@ pageEncoding="UTF-8"%>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="#">Ajuda</a></li>
+                  <li><a class="dropdown-item" href="Login">ADM</a></li>
                 </ul>
                 <li class="nav-item">
-                <a class="nav-link" href="./Login">Login ADM</a>
+                <a class="nav-link" href="#"></a>
               </li>
               </li>
             </ul>

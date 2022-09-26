@@ -18,7 +18,7 @@ public class Carrinho {
 		private Passagem passagens;
 		private Usuario usuario;
 		
-		
+		// Construtores
 		public Carrinho() {
 
 		}
@@ -36,7 +36,7 @@ public class Carrinho {
 			this.usuario = usuario;
 		}
 
-
+		// Getters and setters
 		public int getIdCarrinho() {
 			return idCarrinho;
 		}

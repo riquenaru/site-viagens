@@ -3,16 +3,21 @@ package model;
 
 public class Login {
 	
+	// Atributos
 	private int id;
 	private String tipo;
+	
+	// Contrutores
 	public Login() {
-		super();
+	
 	}
 	public Login(int id, String tipo) {
-		super();
+
 		this.id = id;
 		this.tipo = tipo;
 	}
+	
+	// Getters and setters
 	public int getId() {
 		return id;
 	}

@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
 <%
 @SuppressWarnings("unchecked")
-List<Carrinho> lista = (List<Carrinho>) request.getAttribute("Carrinho");
+List<Passagem> lista = (List<Passagem>) request.getAttribute("Passagem");
 %>
 
 
@@ -14,7 +14,7 @@ List<Carrinho> lista = (List<Carrinho>) request.getAttribute("Carrinho");
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrinho</title>
+<title>Passagem</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -25,8 +25,7 @@ List<Carrinho> lista = (List<Carrinho>) request.getAttribute("Carrinho");
 <body>
 
 
-	
-	<nav class="navbar navbar-expand-lg bg-info">
+                <nav class="navbar navbar-expand-lg bg-info">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="Index.html">Home</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -70,6 +69,7 @@ List<Carrinho> lista = (List<Carrinho>) request.getAttribute("Carrinho");
                         </div>
                     </div>
                 </nav>
+	
 	
 	<header class="tag">
 		<h1 class="container">Login</h1>

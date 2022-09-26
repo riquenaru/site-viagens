@@ -4,6 +4,11 @@ import java.util.Date;
 
 public class Destino {
 	
+	// Atributos
+	private int idDestino;
+	private String destino;
+	private Date data_viagem;
+	
 	// Construtores
 		public Destino() {
 
@@ -14,12 +19,9 @@ public class Destino {
 			this.destino = destino;
 			this.data_viagem = data_viagem;
 		}
+
 	
-	// Atributos
-	
-	private int idDestino;
-	private String destino;
-	private Date data_viagem;
+	//Getters and Setters
 	public int getIdDestino() {
 		return idDestino;
 	}
