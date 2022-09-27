@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.UsuarioDAO;
 import model.Usuario;
+import dao.LoginDAO;
+import model.Login;
 
 @WebServlet(urlPatterns = { "/Usuario", "/Usuario-create", "/Usuario-edit", "/Usuario-update", "/Usuario-delet" })
 public class UsuarioServlet extends HttpServlet {
@@ -19,6 +21,8 @@ public class UsuarioServlet extends HttpServlet {
 
 	UsuarioDAO UsuarioDAO = new UsuarioDAO();
 	Usuario usuario = new Usuario();
+	LoginDAO log = new LoginDAO();
+	Login l1 = new Login();
 	
 	public UsuarioServlet() {
 		super();
@@ -54,7 +58,7 @@ public class UsuarioServlet extends HttpServlet {
 
 		List<Usuario> lista = UsuarioDAO.getUsuario();
 
-		request.setAttribute("Usuario", lista);
+		request.setAttribute("lista", lista);
 
 		RequestDispatcher rd = request.getRequestDispatcher("./views/usuario/index.jsp");
 		rd.forward(request, response);
@@ -63,42 +67,52 @@ public class UsuarioServlet extends HttpServlet {
 	// CREATE
 	protected void create(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		usuario.setEmail(request.getParameter("Email"));
-		
+		usuario.setEmail(request.getParameter("email"));
+		usuario.setSenha(request.getParameter("senha"));
+		usuario.setCpf_cnpj(request.getParameter("cpf_cnpj"));
 		UsuarioDAO.save(usuario);
-		response.sendRedirect("Login");
+		
+		response.sendRedirect("index.htm");
 
 	}
 
 	// READ BY ID
 	protected void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("cpf_cnpj"));
+		
 
-		usuario = UsuarioDAO.getUsuarioByCpf(getServletInfo());
-
-		request.setAttribute("id", login.getId());
-		request.setAttribute("tipo", login.getTipo());
+		//usuario = UsuarioDAO.getUsuarioByCpf(getServletInfo()); //Pode ser que aqui dê erro por causa do cpf
+		
+		usuario.setCpf_cnpj(request.getParameter("cpf_cnpj"));
+		usuario.setSenha(request.getParameter("senha"));
+		usuario.setEmail(request.getParameter("email"));
+		
+		
+		
 		// nome da pag que eu vou precisar criar 
-		RequestDispatcher rd = request.getRequestDispatcher("./views/login/Update.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("./views/usuario/Update.jsp");
 		rd.forward(request, response);
 
 	}
 
 	// UPDATE
 	protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		login.setId(Integer.parseInt(request.getParameter("id")));
-		login.setTipo(request.getParameter("tipo"));
+		String cpfUpdate = request.getParameter("cpf_cnpj");
+		usuario = UsuarioDAO.getUsuarioByCpf(cpfUpdate);
+		request.setAttribute("email", usuario.getEmail());
+		request.setAttribute("cpf_cnpj", usuario.getCpf_cnpj());
+		request.setAttribute("tipo", usuario.getSenha());
+		UsuarioDAO.update(usuario);
 		
-		LoginDAO.update(login);
-		response.sendRedirect("Login");
+		response.sendRedirect("Usuario");
 	}
 
 	// DELET
 	protected void delet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 
-		LoginDAO.deleteById(id);
-		response.sendRedirect("Login");
+		UsuarioDAO.deleteByCpf(id);
+		response.sendRedirect("Usuario");
 	}
 
 }

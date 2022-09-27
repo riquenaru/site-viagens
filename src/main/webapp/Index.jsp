@@ -20,7 +20,7 @@ pageEncoding="UTF-8"%>
       <nav class="navbar navbar-expand-lg bg-info">
         <div class="container-fluid">
           <a class="navbar-brand" href="./Index.jsp"
-          style="color:blue;">Home</a>
+          style="color:blue">Home</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -49,7 +49,7 @@ pageEncoding="UTF-8"%>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="Login">ADM</a></li>
+                  <li><a class="dropdown-item" href="views/adm/Index.jsp">ADM</a></li>
                 </ul>
                 <li class="nav-item">
                 <a class="nav-link" href="#"></a>
